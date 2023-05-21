@@ -1,3 +1,9 @@
+
+# Installing libraries ----------------------------------------------------
+#If you do not have the libraries below, install them before running the code
+#Uncomment the line below to install the libraries
+install.packages(c("rnaturalearth", "ncdf4", "raster", "tidyverse"))
+
 # Loading libraries -------------------------------------------------------
 library(ncdf4)
 library(raster)
@@ -60,7 +66,7 @@ df_sst_clim_south <- ras_sst_clim_south %>%
 glimpse(df_sst_clim_south)
 
 #Loading a map of the world
-world <- rnaturalearth::ne_countries(returnclass = "sf")
+world <- ne_countries(returnclass = "sf")
 
 #Plotting data
 df_sst_clim_south %>% 
