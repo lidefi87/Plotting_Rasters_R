@@ -2,12 +2,17 @@
 # Installing libraries ----------------------------------------------------
 #If you do not have the libraries below, install them before running the code
 #Uncomment the line below to install the libraries
-install.packages(c("rnaturalearth", "ncdf4", "raster", "tidyverse"))
+# install.packages(c("rnaturalearth", "ncdf4", "raster", "magrittr", "tidyr",
+#                    "dplyr", "stringr", "ggplot2"))
 
 # Loading libraries -------------------------------------------------------
 library(ncdf4)
 library(raster)
-library(tidyverse)
+library(magrittr)
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(ggplot2)
 
 # Checking data -----------------------------------------------------------
 #We will look into the contents of our file first to understand its structure
@@ -66,7 +71,7 @@ df_sst_clim_south <- ras_sst_clim_south %>%
 glimpse(df_sst_clim_south)
 
 #Loading a map of the world
-world <- ne_countries(returnclass = "sf")
+world <- rnaturalearth::ne_countries(returnclass = "sf")
 
 #Plotting data
 df_sst_clim_south %>% 
@@ -107,7 +112,6 @@ ts_sst_south %>%
 
 
 # Calculating anomalies ---------------------------------------------------
-
 #Using the data frame above, we will calculate the annual mean for the Southern 
 #Hemisphere, we will then substract the monthly means values we calculated above
 south_mean <- df_sst_clim_south %>% 
