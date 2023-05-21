@@ -1,0 +1,10 @@
+import xarray as xr
+import matplotlib.pyplot as plt
+
+ds = xr.open_dataset("Data/sst.ltm.nc").sst
+ds.attrs
+ds.min().values
+
+plt.close()
+ds.sst.where(ds.sst > -9.96921e+36).isel(time = 10).plot()
+plt.show()
