@@ -1,0 +1,8 @@
+install.packages("rnaturalearth")
+install.packages("ncdf4")
+install.packages("raster")
+install.packages("magrittr")
+install.packages("tidyr")
+install.packages("dplyr")
+install.packages("stringr")
+install.packages("ggplot2")
