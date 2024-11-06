@@ -1,7 +1,6 @@
 install.packages("rnaturalearth")
 install.packages("ncdf4")
-install.packages("raster")
-install.packages("magrittr")
+install.packages("terra")
 install.packages("tidyr")
 install.packages("dplyr")
 install.packages("stringr")
